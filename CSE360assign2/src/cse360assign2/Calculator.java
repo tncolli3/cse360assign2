@@ -1,4 +1,10 @@
-
+/**
+* Taylor Collins
+*Class ID: 352
+* Assignment #2
+* This is version 3 of Calculator.java which performs the add,subtract,multiply and divide
+* operations, as well as returns the history of calculations.
+**/
 package cse360assign2;
 
 public class Calculator {
