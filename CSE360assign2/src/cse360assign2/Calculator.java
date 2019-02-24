@@ -4,12 +4,14 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history= "";
 	
 	/**
 	 * Class constructor.
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history=String.valueOf(total);
 	}
 	
 	/**
@@ -27,12 +29,14 @@ public class Calculator {
 	 * Adds together two numbers.
 	 * <p>
 	 * This method returns nothing but performs a simple add calculation.
-	 * The parameter value is added to the total.
+	 * The parameter value is added to the total and the calculation is added
+	 * to the history.
 	 * @param value integer to be added to total.
 	 */
 	
 	public void add (int value) {
 		total += value;
+		history=history+" + "+ value;
 	}
 	
 	
@@ -40,11 +44,12 @@ public class Calculator {
 	 * Performs a simple subtraction.
 	 * <p>
 	 * This method returns nothing, but subtracts the parameter value from
-	 * the total.
+	 * the total and adds the calculation to the history.
 	 * @param value integer to be subtracted
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history=history+" - "+ value;
 	}
 	
 	
@@ -52,11 +57,12 @@ public class Calculator {
 	 * Performs simple multiplication.
 	 * <p>
 	 * This method returns nothing, but multiplies the total by the value passed into
-	 * the function.
+	 * the function and adds the calculation to the history.
 	 * @param value integer to multiply by.
 	 */
 	public void multiply (int value) {
 		total *=value;
+		history=history+" * "+ value;
 	}
 	
 	
@@ -67,6 +73,7 @@ public class Calculator {
 	 * This method returns nothing, but divides the total by the 
 	 * value passed into the method. If the value is zero, the total
 	 * is set to zero and no division is performed.
+	 * The calculation is then added to the history.
 	 * @param value integer to divide by.
 	 */
 	public void divide (int value) {
@@ -78,6 +85,8 @@ public class Calculator {
 		{
 			total = total / value;
 		}
+		
+		history=history+" / "+ value;
 	}
 	
 	
@@ -90,6 +99,6 @@ public class Calculator {
 	 * @return  the history of calculations.
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
